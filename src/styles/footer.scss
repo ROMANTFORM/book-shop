@@ -1,0 +1,20 @@
+.footer-section{
+    background-color: $black;
+    color: $hak-light;
+}
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer__icon-container{
+    margin-bottom: 7px;
+}
+.footer__link svg{
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+}
+.footer__descr span{
+    font-size: 14px;
+}

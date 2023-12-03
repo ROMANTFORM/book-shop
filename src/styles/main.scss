@@ -1,0 +1,26 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+@import './header.scss';
+@import './footer.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+ul, ol, nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+.container{
+    padding: 40px 60px;
+}
