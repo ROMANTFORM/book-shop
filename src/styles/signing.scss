@@ -1,0 +1,38 @@
+.signin-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/bckgrnd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+}
+.signin__form{
+    width: 400px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid $hak-light;
+    border-radius: $radius;
+    background-color: rgba(100, 100, 100, 0.6);
+}
+.signin-user-profile{
+    color: $hak-light;
+    margin-bottom: 27px;
+}
+.signin-user-img{
+    width: 100px;
+    height: 100px;
+}
+.signin-user-img svg{
+    width: 95px;
+    height: 95px;
+}
+.signin-user-name{
+    font-size: 25px;
+}
+.signin__input{
+    margin-bottom: 15px;
+}

@@ -3,6 +3,10 @@
 @import './mixins.scss';
 @import './header.scss';
 @import './footer.scss';
+@import './bookcard.scss';
+@import './booklist.scss';
+@import './cart.scss';
+@import './signing.scss';
 
 *{
     margin: 0;
@@ -22,5 +26,43 @@ button{
     cursor: pointer;
 }
 .container{
-    padding: 40px 60px;
+    padding: 30px 60px;
+}
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section{
+    flex-grow: 1;
+}
+.btn{
+    padding: 5px 7px;
+    border-radius: $btn-radius;
+    background-color: $blue;
+    color: $white;
+    transition: opacity 250ms linear;
+}
+.btn:hover{
+    opacity: 0.8;
+    transition: opacity 250ms linear;
+}
+.user-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.user-img{
+    border-radius: 50%;
+    border: 2px solid $hak-light;
+}
+.input{
+    width: 100%;
+    padding: 7px;
+    border-radius: $radius;
+    outline: none;
+    border: none;
 }

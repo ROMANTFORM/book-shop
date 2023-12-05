@@ -16,13 +16,13 @@ export default function Header(){
                             <TiShoppingCart />
                        </Link>
                        <Link  to="/">
-                            <button className="logout-btn">Log Out</button>
+                            <button className="logout-btn btn">Log Out</button>
                        </Link>
-                       <Link className="user-profile" to="/">
-                            <span className="user-img">
+                       <Link className="header-user-profile user-profile" to="/">
+                            <span className="header-user-img user-img">
                                 <TiUser/>
                             </span>
-                            <span className="user-name">Username</span>
+                            <span className="header-user-name user-name">Username</span>
                        </Link>
                     </div>
                 </nav> 

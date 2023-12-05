@@ -34,35 +34,15 @@
     width: 50px;
     height: 50px;
 }
-.logout-btn{
-    padding: 5px 7px;
-    border-radius: $btn-radius;
-    background-color: $blue;
-    color: $white;
-    transition: opacity 250ms linear;
-}
-.logout-btn:hover{
-    opacity: 0.8;
-    transition: opacity 250ms linear;
-}
-.user-profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.user-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.header-user-img{   
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border: 2px solid $hak-light;
 }
-.user-img svg{
+.header-user-img svg{
     width: 47px;
     height: 47px;
 }
-.user-name{
+.header-user-name{
     font-size: 20px;
 }
