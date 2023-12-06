@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Tooltip } from 'react-tooltip';
 import { TiShoppingCart, TiUser } from "react-icons/ti";
 
 export default function Header(){
@@ -12,8 +13,9 @@ export default function Header(){
                         <span className="logo-name">Book Shop</span>
                     </Link>
                     <div className="navigation-controls">
-                       <Link className="cart-container" to="/cart">
+                       <Link className="cart-container" to="/cart" data-tooltip-id="my-tooltip" data-tooltip-content="go to your cart">
                             <TiShoppingCart />
+                            <Tooltip id="my-tooltip" />
                        </Link>
                        <Link  to="/">
                             <button className="logout-btn btn">Log Out</button>

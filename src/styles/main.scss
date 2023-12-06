@@ -38,10 +38,11 @@ button{
     flex-grow: 1;
 }
 .btn{
-    padding: 5px 7px;
+    padding: 7px 11px;
     border-radius: $btn-radius;
     background-color: $blue;
     color: $white;
+    font-weight: bold;
     transition: opacity 250ms linear;
 }
 .btn:hover{
@@ -52,12 +53,10 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
 }
 .user-img{
     border-radius: 50%;
-    border: 2px solid $hak-light;
 }
 .input{
     width: 100%;
@@ -65,4 +64,9 @@ button{
     border-radius: $radius;
     outline: none;
     border: none;
+}
+#my-tooltip{
+    background-color: $grey;
+    color: $white;
+    font-size: 14px;
 }
