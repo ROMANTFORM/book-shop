@@ -31,10 +31,6 @@
    border-radius: $radius;
     padding: 9px 10px;
 }
-.filter__select-wrap select option{
-   
-}
-
 .book__list{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -44,6 +40,9 @@
     }
 }
 .book__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     background-color: $grey-light;
     border-radius: $radius;
@@ -57,19 +56,23 @@
     transition: transform 250ms linear;
 }
 .book__item-img-wrap{
-    width: 100%;
+    height: 328px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .book__item-info{
     color: $grey;
+}
+.book__item-info h3{
+    margin-bottom: 9px;
 }
 .book__item-controls{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 17px;
 }
 .book__item-controls span{
     color: $grey;
