@@ -1,0 +1,55 @@
+.bookcard__main-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+.bookcard__img-block{}
+.bookcard__img{}
+.bookcard__info-block p{
+    margin-top: 18px;
+}
+.bookcard__buy-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    border-radius: $radius;
+    border: 2px solid $grey;
+    padding: 20px;
+}
+.bookcard__price-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grey-light;
+}
+.bookcard__buy-block-counter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+.bookcard__buy-counter-container{
+    display: flex;
+    justify-content: center;
+    border: 1px solid $grey;
+    border-radius: $btn-radius;
+    font-size: 24px;
+    width: 50%;
+}
+.bookcard__buy-counter-container span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.bookcard__buy-counter-container svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.bookcard__buy-counter-container span{}
+.bookcard__descr-section{
+    color: $grey-light;
+}

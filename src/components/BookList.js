@@ -1,21 +1,12 @@
-import { useEffect, useState } from 'react';
-
+import { Link, useRouteMatch } from 'react-router-dom';
+import books from './BookData';
 import defaultImg from '../images/defaultIMG.png';
 import { IoIosSearch } from "react-icons/io";
 
 
 
 export default function BookList(){
-
-    const [fetchData, setFetchData] = useState();
-
-    const api = 'http://localhost:8080/books';
-
-    useEffect(() => {
-        fetch(api)
-        .then(res => res.json())
-        .then(data => setFetchData(data))
-    }, [api])
+    const {url} = useRouteMatch();
 
     return(
         <div className="booklist-section section">
@@ -36,21 +27,24 @@ export default function BookList(){
                 </div>
 
                 <div className="book__list"> 
-                    {fetchData?.map(item =>(
-                        <div className="book__item" key={item.id}>
-                            <div className='book__item-img-wrap'>
-                            <img src={item.image ? item.image : defaultImg} alt='pic' className="book__item-img"/> 
-                            </div>
-                            
-                            <div className="book__item-info">
-                                <h3>{item.title}</h3>
-                                <h5>Author: {item.author}</h5>
-                                <div className="book__item-controls">
-                                    <span>Price: {item.price}$</span>
-                                    <button className="btn book__item-btn">View</button>
+                    {books?.map(({id, image,title, author, price}) => (
+                        <Link to={`${url}/${id}`} key={id}>
+                            <div className="book__item">
+                                <div className='book__item-img-wrap'>
+                                <img src={image ? image : defaultImg} alt='pic' className="book__item-img"/> 
+                                </div>
+                                
+                                <div className="book__item-info">
+                                    <h3>{title}</h3>
+                                    <h5>Author: {author}</h5>
+                                    <div className="book__item-controls">
+                                        <span>Price: {price}$</span>
+                                        <button className="btn book__item-btn">View</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
+                        
                     ))}                 
                 </div>
 
