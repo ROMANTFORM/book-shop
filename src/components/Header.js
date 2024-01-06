@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Tooltip } from 'react-tooltip';
 import { TiShoppingCart, TiUser } from "react-icons/ti";
+import { connect } from "react-redux";
 
-export default function Header(){
+function Header({cart}){
 
     return(
         <div className="header-section">
@@ -16,6 +17,8 @@ export default function Header(){
                        <Link className="cart-container" to="/cart" data-tooltip-id="my-tooltip" data-tooltip-content="go to your cart">
                             <TiShoppingCart />
                             <Tooltip id="my-tooltip" />
+                            {cart.length > 0 ? <span className="cart-container__amount">{cart.length}</span> : ''}
+                            
                        </Link>
                        <Link  to="/">
                             <button className="logout-btn btn">Log Out</button>
@@ -33,3 +36,9 @@ export default function Header(){
         </div>
     )
 };
+
+const mapStateToProps = state => ({
+    cart: state.cart
+})
+
+export default connect(mapStateToProps)(Header)

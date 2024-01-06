@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
-import books from "./BookData";
 import defaultImg from '../images/defaultIMG.png';
-import { useState } from "react";
+import { connect } from "react-redux";
+import * as counterActions from '../redux/counter/counter-actions';
+
+import * as cartActions from '../redux/cart/cart-actions';
 
 
 
-export default function BookCard(){
+function BookCard({value, data, onIncrement, onDecrement, addItem}){
     const {id} = useParams();
-    const {image, title, author, level, tags, description, price } = books.find(book => book.id === +id);
+    const {image, title, author, level, tags, description, price } = data.find(book => book.id === +id);
     
-    const [counterValue, setCounterValue] = useState(1);
+    let totalPrice = price * value;
 
     return(
         <div className="bookcard-section section">
@@ -34,17 +36,17 @@ export default function BookCard(){
                             <div className="bookcard__buy-block-counter">
                                 <span>Count:</span>
                                 <div className="bookcard__buy-counter-container">
-                                    <span onClick={() => setCounterValue(counterValue > 1 ? counterValue - 1 : counterValue)}><MdArrowLeft /></span>
-                                    <span>{counterValue}</span>
-                                    <span onClick={() => setCounterValue(counterValue + 1)}><MdArrowRight /></span>
+                                    <span onClick={onDecrement}><MdArrowLeft /></span>
+                                    <span>{value}</span>
+                                    <span onClick={onIncrement}><MdArrowRight /></span>
                                 </div>
                             </div>
                             <div className="bookcard__price-wrap">
                                 <span>Total price:</span>
-                                <span>{price * counterValue} $</span>
+                                <span>{totalPrice} $</span>
                             </div> 
                         </div>
-                        <button className="btn">Buy</button>
+                        <button className="btn" onClick={() => addItem({id, image, title, totalPrice, value })}>Add to Cart</button>
                     </div>
                 </div>
                 <div className="bookcard__descr-section">
@@ -53,4 +55,14 @@ export default function BookCard(){
             </div>
         </div>
     )
-}
+};
+
+const mapStateToProp = state => ({value: state.value, data: state.data});
+
+const mapDispatchToProps = dispatch => ({
+    onIncrement: () => dispatch(counterActions.increment(1)),
+    onDecrement: () => dispatch(counterActions.decrement(1)),
+    addItem: (item) => dispatch(cartActions.addItemToCart(item))
+});
+
+export default connect(mapStateToProp, mapDispatchToProps)(BookCard);

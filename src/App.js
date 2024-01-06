@@ -6,6 +6,7 @@ import Signin from "./components/Signin";
 import Cart from "./components/Cart";
 import BookList from "./components/BookList";
 import BookCard from "./components/BookCard";
+import PrivateRoute from "./PrivateRoute";
 
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
           <Route exact path="/" component={Signin}/>
           <Route path="/cart" component={Cart}/>
           <Route exact path="/booklist" component={BookList}/>
+          {/* <PrivateRoute path="/booklist">
+            <BookList/>
+          </PrivateRoute> */}
           <Route path="/booklist/:id" component={BookCard}/>
         </Switch>
       <Footer/>
