@@ -1,10 +1,9 @@
-import { Link, useRouteMatch } from 'react-router-dom';
-import defaultImg from '../images/defaultIMG.png';
-import { IoIosSearch } from "react-icons/io";
 import { useState } from 'react';
 import { connect } from "react-redux";
-import changeFilter from '../redux/filter/filter-actions';
+import { Link, useRouteMatch } from 'react-router-dom';
 
+import defaultImg from '../images/defaultIMG.png';
+import { IoIosSearch } from "react-icons/io";
 
 
 function BookList({data}){
@@ -24,15 +23,16 @@ function BookList({data}){
     const handlerSubmit = (e) => {
         e.preventDefault();
         console.log(inputValue)
-        return filteredData.filter(item => item.title.toLowerCase().includes(inputValue.toLowerCase()));   
+        
+       filteredData = data.filter(item => item.title.toLowerCase().includes(inputValue.toLowerCase())); 
+        
+        console.log(filteredData) 
+        resetFilter() 
     }
-    // const searchValue = (value) => {
-    //    filteredData = books.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
-    //    resetFilter()
-    // }
-    // const resetFilter = () => {
-    //     setInputValue('');
-    // }
+    
+    const resetFilter = () => {
+        setInputValue('');
+    }
  
     if(selectValue){
         filteredData = data.filter(item => item.price < +selectValue)
@@ -40,20 +40,14 @@ function BookList({data}){
     // if(inputValue){
     //     filteredData = data.filter(item => item.title.toLowerCase().includes(inputValue.toLowerCase()));    
     // }
-    // const onSearch = (e) => {
-    //     e.preventDefault();
-        
-    //     console.log(value)
-    //    filteredData = filteredData.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));  
-    //     // console.log(filteredData)
-    // }
+  
 
     return(
         <div className="booklist-section section">
             <div className="container">
 
                 <div className="filter__container">
-                    <form className='filter__search-wrap' onSubmit={handlerSubmit} >
+                    <form className='filter__search-wrap' onSubmit={ handlerSubmit} >
                         <input 
                             className='filter__search-inpt' 
                             value={inputValue} 

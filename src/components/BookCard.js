@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
-import { MdArrowLeft, MdArrowRight } from "react-icons/md";
-import defaultImg from '../images/defaultIMG.png';
+
 import { connect } from "react-redux";
 import * as counterActions from '../redux/counter/counter-actions';
-
 import * as cartActions from '../redux/cart/cart-actions';
 
-
+import { MdArrowLeft, MdArrowRight } from "react-icons/md";
+import defaultImg from '../images/defaultIMG.png';
 
 function BookCard({value, data, onIncrement, onDecrement, addItem}){
+
     const {id} = useParams();
     const {image, title, author, level, tags, description, price } = data.find(book => book.id === +id);
     

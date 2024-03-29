@@ -4,6 +4,7 @@ import { counterReducer } from "./counter/counter-reducer";
 import { dataReducer } from "./data/data-reducer";
 import { cartReducer } from "./cart/cart-reducer";
 import { filterReducer } from "./filter/filter-reduser";
+import { authReducer } from "./auth/auth-reducer";
 
 
 
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     value: counterReducer,
     data: dataReducer,
     cart: cartReducer,
-    filter: filterReducer
+    filter: filterReducer,
+    auth: authReducer
 })
 
 const composedEnhancer = composeWithDevTools(  

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { connect } from "react-redux";
+
 import { Tooltip } from 'react-tooltip';
 import { TiShoppingCart, TiUser } from "react-icons/ti";
-import { connect } from "react-redux";
 
 function Header({cart}){
 
